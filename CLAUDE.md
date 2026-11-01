@@ -21,7 +21,7 @@ Loud, grateful, informal, emoji-friendly (😭🥹🫶😈😘). Signature lines
 - **Privacy:** if anything that collects personal data is added (mailing list, SMS, push, analytics, or more third-party embeds), update `privacy.html` and its LAST UPDATED line *before* it ships.
 - **Instagram posts** (the organizer post under the heading, and FROM THE FIELD) load from Instagram only after a visitor taps that card's own button. Never load on scroll or page load, and don't add the Instagram embed script.
 - **Removed on purpose:** PLUR copy and the Skydaddy credit. Do not reintroduce them.
-- **Credits:** use handles exactly as given. Photos by @lane.c.media. Don't alter the handle list in `index.html` without being asked.
+- **Credits:** use handles exactly as given. Photos by @lane.c.media. Don't alter the `CREW` list in `index.html` without being asked.
 - Don't edit the separate guide-app project (`possumstock2026.netlify.app`).
 
 ## Open items
