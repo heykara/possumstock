@@ -26,7 +26,7 @@ The festival is over. `index.html` was replaced with a single-page **thank-you /
 7. Footer with a privacy link.
 
 ## Voice and tone (from the organizer's own post, @el.parson)
-Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "THE SEASON AIN'T OVER", "more news coming at you with the quickness". Claims used: biggest PossumStock to date and the wildest weekend in years. Keep the energy and avoid corporate language. Don't repeat the organizer's text word for word.
+Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "POSSUMS DON'T HIBERNATE" (replaces the retired "THE SEASON AIN'T OVER"), "more news coming at you with the quickness". Claims used: biggest PossumStock to date and the wildest weekend in years. Keep the energy and avoid corporate language. Don't repeat the organizer's text word for word.
 
 ## Decisions already made
 - **PLUR removed** from this page. Do not reintroduce the PLUR block or the "PEACE · LOVE · UNITY · RESPECT" line.
@@ -41,7 +41,7 @@ Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "
 - Behind the scenes: @flameseductress, @_karacomputer, @matt.tv
 - Other crew: @william_wilyard, @randallsaez, @yonky_mcyonkerface, @fancy_boy_clothes, @malfunktion365, @aberration7_77, @msdawnmarie, @glitter.d3mons, @flame_therapist
 - Photos: @lane.c.media
-- Partners row (not from the post): Red River Canoe & Campground, Moon Rooster, Revel House Pub & Eatery, &Vinyl Records, Ville Magazine, Kim Cargill Realty, food vendors
+- Partners row (not from the post): Red River Canoe & Campground, Moon Rooster, Revel House Pub & Eatery, &Vinyl Records, Ville Magazine (@villerockandroll), Kim Cargill Realty (realtor.com page), food vendors
 
 ## Instagram clips: how they work
 - Data is the `CLIPS` object at the bottom of `index.html`: `stage: [type, shortcode, creditHandle?]`, where type is `reel` or `p`.
@@ -77,3 +77,10 @@ A concrete save-the-date once there is a date; an optional feedback link; a self
 - Lineup is folded behind a **SEE THE LINEUP ▼** button (`#lineupToggle` / `#lineupBody`). The nav LINEUP link, `#lineup` and `#day-*` hashes open it.
 - WHO MADE IT HAPPEN is one wall of band-style name blocks built from the `CREW` array (name + Instagram handle or https link). Joe Tellmann, Consolidated Presents, Kody Luck, kara computer and Matt TV have names; the rest still show handles until real names are supplied. Partners are folded into the same wall.
 - Shared helpers: `styleBlock`, `nameBlock`, `igUrl`.
+
+## Aesthetic pass 3
+- All section cards and the hero title card now use the closing-card look: ink background, slime border and offset shadow, white text. Inner stickers stay white with ink text; their shadows use `var(--sh)` (slime inside cards).
+- Ticker and OG description no longer say "THE SEASON AIN'T OVER" (ticker now says POSSUMS DON'T HIBERNATE).
+- Partner links confirmed: Kim Cargill Realty -> realtor.com agent page; Ville Magazine -> instagram.com/villerockandroll.
+- Lineup stays click-to-expand. No A-Z finder.
+- `.day-jump` is a `<nav>`, so it carries explicit resets so the global `nav` styles don't leak onto it.

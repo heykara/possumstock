@@ -6,7 +6,7 @@
 <meta name="description" content="Thank you from PossumStock 2026. Possums never die. The season is not over.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="POSSUMSTOCK 2026 · THANK YOU, SWAMP">
-<meta property="og:description" content="Possums never die. The season ain't over. News dropping soon.">
+<meta property="og:description" content="Possums never die. News dropping soon.">
 <meta property="og:image" content="https://possumstock.netlify.app/assets/possumstock-2026-logo.png">
 <meta property="og:url" content="https://possumstock.netlify.app/">
 <meta name="twitter:card" content="summary_large_image">
@@ -84,17 +84,17 @@ section { padding:56px 20px; position:relative; scroll-margin-top:70px; }
 .eyebrow { font-family:'Permanent Marker',cursive; font-size:0.85rem; letter-spacing:4px; color:var(--purple); display:block; margin-bottom:10px; }
 .hero-logo { display:block; width:100%; max-width:520px; height:auto; margin:0 auto 18px; animation:titleBop 5s ease-in-out infinite; }
 @keyframes titleBop { 0%,100% { transform:rotate(-1.5deg) scale(1); } 50% { transform:rotate(1.5deg) scale(1.02); } }
-.title-card { max-width:700px; margin:0 auto; background:rgba(255,255,255,0.55); border:3.5px solid var(--ink); box-shadow:6px 6px 0 var(--ink); border-radius:4px; padding:30px 34px 28px; position:relative; }
+.title-card { --sh:var(--slime); max-width:700px; margin:0 auto; background:var(--ink); color:#fff; border:3.5px solid var(--slime); box-shadow:6px 6px 0 var(--slime); border-radius:4px; padding:30px 34px 28px; position:relative; }
 h1 { font-family:'Nosifer',cursive; font-size:clamp(1.7rem,6vw,3rem); letter-spacing:2px; line-height:1.15; }
 .hand-underline { height:6px; max-width:200px; margin:10px auto 18px; background:var(--slime); border:2px solid var(--ink); border-radius:3px; transform:rotate(-1deg); }
 .lede { font-family:'Fredoka One',cursive; font-size:1.12rem; line-height:1.65; max-width:560px; margin:0 auto; }
-.dates { display:inline-block; margin-top:18px; font-family:'Fredoka One',cursive; letter-spacing:2px; background:var(--yellow); padding:4px 16px; border:2px solid var(--ink); box-shadow:3px 3px 0 var(--ink); }
+.dates { color:var(--ink); display:inline-block; margin-top:18px; font-family:'Fredoka One',cursive; letter-spacing:2px; background:var(--yellow); padding:4px 16px; border:2px solid var(--ink); box-shadow:3px 3px 0 var(--ink); }
 .possum-love { display:block; margin:-4px auto 2px; animation:possumBop 2.4s ease-in-out infinite; }
 
 /* collapsible lineup */
 .lineup-cta { text-align:center; margin:6px 0 10px; }
-.lineup-toggle { font-family:'Lilita One',cursive; font-size:1.25rem; letter-spacing:1px; min-height:56px; padding:10px 26px; background:var(--slime); color:var(--ink); border:3.5px solid var(--ink); box-shadow:5px 5px 0 var(--ink); border-radius:3px; cursor:pointer; transform:rotate(-1deg); transition:transform .15s, box-shadow .15s, background .15s; }
-.lineup-toggle:hover { background:var(--yellow); transform:translate(-2px,-2px) rotate(-1deg); box-shadow:7px 7px 0 var(--ink); }
+.lineup-toggle { font-family:'Lilita One',cursive; font-size:1.25rem; letter-spacing:1px; min-height:56px; padding:10px 26px; background:var(--slime); color:var(--ink); border:3.5px solid var(--ink); box-shadow:5px 5px 0 var(--sh,var(--ink)); border-radius:3px; cursor:pointer; transform:rotate(-1deg); transition:transform .15s, box-shadow .15s, background .15s; }
+.lineup-toggle:hover { background:var(--yellow); transform:translate(-2px,-2px) rotate(-1deg); box-shadow:7px 7px 0 var(--sh,var(--ink)); }
 .lineup-toggle .arrow { display:inline-block; margin-left:6px; animation:arrowBounce 1.2s ease-in-out infinite; }
 .lineup-toggle[aria-expanded="true"] .arrow { animation:none; }
 @keyframes arrowBounce { 0%,100% { transform:translateY(-2px); } 50% { transform:translateY(5px); } }
@@ -113,15 +113,17 @@ h1 { font-family:'Nosifer',cursive; font-size:clamp(1.7rem,6vw,3rem); letter-spa
 .gang span { display:inline-block; animation:possumBop 2s ease-in-out infinite; animation-delay:calc(var(--i) * .18s); }
 .gang img { display:block; width:30px; height:auto; }
 .gang span:nth-child(even) img { transform:scaleX(-1); }
-.card .gang { margin-top:34px; padding-top:18px; border-top:2px dashed rgba(26,18,40,0.12); }
+.card .gang { margin-top:34px; padding-top:18px; border-top:2px dashed rgba(255,255,255,0.18); }
 @keyframes possumBop { 0%,100% { transform:translateY(0) rotate(-4deg); } 50% { transform:translateY(-7px) rotate(4deg); } }
 
 /* wavy dividers */
 .sec-divider { position:relative; z-index:3; display:block; width:100%; height:90px; margin:-1px 0; }
 
 /* section cards */
-.card { max-width:1040px; margin:0 auto; background:rgba(255,255,255,0.58); border:3px solid var(--ink); box-shadow:6px 6px 0 var(--ink); border-radius:3px; padding:44px 40px 46px; position:relative; backdrop-filter:blur(4px); }
-.card::before, .day::before { content:''; position:absolute; inset:8px; border:1.5px dashed rgba(26,18,40,0.2); pointer-events:none; }
+.card { --sh:var(--slime); max-width:1040px; margin:0 auto; background:var(--ink); color:#fff; border:3px solid var(--slime); box-shadow:6px 6px 0 var(--slime); border-radius:3px; padding:44px 40px 46px; position:relative; }
+.card::before { content:''; position:absolute; inset:8px; border:1.5px dashed rgba(255,255,255,0.18); pointer-events:none; }
+.day::before { content:''; position:absolute; inset:8px; border:1.5px dashed rgba(26,18,40,0.2); pointer-events:none; }
+.stage, .day, .clip-card { color:var(--ink); }
 .sec-head { text-align:center; margin-bottom:34px; position:relative; }
 .tag { font-family:'Permanent Marker',cursive; font-size:0.82rem; letter-spacing:4px; display:block; margin-bottom:6px; }
 h2 { font-family:'Nosifer',cursive; font-size:clamp(1.4rem,4vw,2.5rem); letter-spacing:2px; line-height:1.2; }
@@ -129,17 +131,17 @@ h2 { font-family:'Nosifer',cursive; font-size:clamp(1.4rem,4vw,2.5rem); letter-s
 
 /* stage thanks */
 .stages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; position:relative; }
-.stage { background:#fff; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); border-radius:3px; padding:26px 18px 20px; position:relative; }
+.stage { background:#fff; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--sh,var(--ink)); border-radius:3px; padding:26px 18px 20px; position:relative; }
 .stage:nth-child(1) { transform:rotate(-0.7deg); }
 .stage:nth-child(2) { transform:translateY(8px) rotate(0.6deg); }
 .stage:nth-child(3) { transform:rotate(-0.4deg); }
-.stage-name { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; display:block; width:max-content; max-width:calc(100% - 8px); margin:-40px auto 12px; padding:6px 12px; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--ink); border-radius:2px; text-align:center; }
+.stage-name { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; display:block; width:max-content; max-width:calc(100% - 8px); margin:-40px auto 12px; padding:6px 12px; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--sh,var(--ink)); border-radius:2px; text-align:center; }
 .sun { background:var(--yellow); } .eclipse { background:var(--cyan); } .moon { background:var(--purple); color:#fff; }
 .stage p { font-family:'Fredoka One',cursive; font-size:0.98rem; line-height:1.6; }
 
 /* lineup wall */
 .days { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; align-items:start; position:relative; }
-.day { position:relative; background:#fff; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); border-radius:3px; padding:22px 16px 20px; }
+.day { position:relative; background:#fff; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--sh,var(--ink)); border-radius:3px; padding:22px 16px 20px; }
 .day:nth-child(1) { transform:rotate(-0.7deg); } .day:nth-child(2) { transform:translateY(10px) rotate(0.6deg); } .day:nth-child(3) { transform:rotate(-0.35deg); }
 .day-head { text-align:center; margin-bottom:12px; position:relative; }
 .day-date { display:block; font-family:'Permanent Marker',cursive; font-size:0.72rem; letter-spacing:2px; margin-bottom:6px; }
@@ -147,15 +149,15 @@ h2 { font-family:'Nosifer',cursive; font-size:clamp(1.4rem,4vw,2.5rem); letter-s
 .day:nth-child(1) .day-title { color:var(--slime-dark); } .day:nth-child(2) .day-title { color:var(--cyan-dark); } .day:nth-child(3) .day-title { color:var(--pink-dark); }
 .day-stage { position:relative; margin-top:14px; padding-top:12px; border-top:2px dashed var(--ink); }
 .day-stage:first-of-type { border-top:0; padding-top:0; }
-.day-stage h4 { display:table; margin:0 auto 10px; font-family:'Permanent Marker',cursive; font-weight:normal; font-size:0.78rem; letter-spacing:1.5px; padding:3px 10px; border:2px solid var(--ink); box-shadow:2px 2px 0 var(--ink); }
+.day-stage h4 { display:table; margin:0 auto 10px; font-family:'Permanent Marker',cursive; font-weight:normal; font-size:0.78rem; letter-spacing:1.5px; padding:3px 10px; border:2px solid var(--ink); box-shadow:2px 2px 0 var(--sh,var(--ink)); }
 .acts { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
-.act { display:inline-flex; align-items:center; max-width:100%; min-height:34px; padding:6px 11px; background:#fff; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--ink); border-radius:2px; font-family:'Fredoka One',cursive; font-size:0.95rem; line-height:1.1; text-align:center; overflow-wrap:anywhere; transition:transform .15s, background .15s, box-shadow .15s; }
-.act:hover { background:var(--yellow) !important; color:var(--ink) !important; transform:translate(-2px,-2px) rotate(-2deg) !important; box-shadow:5px 5px 0 var(--ink); }
+.act { color:var(--ink); display:inline-flex; align-items:center; max-width:100%; min-height:34px; padding:6px 11px; background:#fff; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--sh,var(--ink)); border-radius:2px; font-family:'Fredoka One',cursive; font-size:0.95rem; line-height:1.1; text-align:center; overflow-wrap:anywhere; transition:transform .15s, background .15s, box-shadow .15s; }
+.act:hover { background:var(--yellow) !important; color:var(--ink) !important; transform:translate(-2px,-2px) rotate(-2deg) !important; box-shadow:5px 5px 0 var(--sh,var(--ink)); }
 .acts.flow .act { font-family:'Fredoka One',cursive !important; font-size:0.82rem !important; background:var(--ink) !important; color:var(--cyan) !important; }
 
 /* thanks chips */
 .chips { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; position:relative; }
-.chip { max-width:100%; overflow-wrap:anywhere; font-family:'Fredoka One',cursive; font-size:1rem; padding:8px 14px; min-height:44px; display:inline-flex; align-items:center; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--ink); border-radius:2px; transition:transform .15s, background .15s; cursor:default; }
+.chip { color:var(--ink); max-width:100%; overflow-wrap:anywhere; font-family:'Fredoka One',cursive; font-size:1rem; padding:8px 14px; min-height:44px; display:inline-flex; align-items:center; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--sh,var(--ink)); border-radius:2px; transition:transform .15s, background .15s; cursor:default; }
 .chip:hover { background:var(--yellow) !important; color:var(--ink) !important; transform:translate(-2px,-2px) rotate(-2deg); }
 .c1 { background:#fff; transform:rotate(-1.5deg); } .c2 { background:var(--slime); transform:rotate(1deg); }
 .c3 { background:var(--pink); transform:rotate(-0.5deg); } .c4 { background:var(--ink); color:var(--slime); transform:rotate(1.5deg); }
@@ -166,53 +168,51 @@ a.chip { text-decoration:none; cursor:pointer; }
 /* clips: taped photo cards */
 [hidden] { display:none !important; }
 .clip-cats { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:12px; position:relative; }
-.clip-cat { font-family:'Permanent Marker',cursive; font-size:0.9rem; letter-spacing:1px; padding:10px 18px; min-height:44px; background:#fff; color:var(--ink); border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--ink); cursor:pointer; transition:all .12s; }
-.clip-cat:hover, .clip-cat[aria-pressed="true"] { background:var(--cyan); transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--ink); }
+.clip-cat { font-family:'Permanent Marker',cursive; font-size:0.9rem; letter-spacing:1px; padding:10px 18px; min-height:44px; background:#fff; color:var(--ink); border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--sh,var(--ink)); cursor:pointer; transition:all .12s; }
+.clip-cat:hover, .clip-cat[aria-pressed="true"] { background:var(--cyan); transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--sh,var(--ink)); }
 .clip-hint { position:relative; text-align:center; font-family:'Fredoka One',cursive; font-size:0.9rem; line-height:1.5; margin:0 auto 40px; max-width:520px; }
 .clip-grid { position:relative; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:44px 30px; align-items:start; }
 .clip-grid.single { grid-template-columns:minmax(0,420px); justify-content:center; }
-.clip-card { --tilt:0deg; margin:0; position:relative; background:#fff; border:3px solid var(--ink); box-shadow:6px 6px 0 var(--ink); border-radius:3px; padding:14px 14px 0; transform:rotate(var(--tilt)); transition:opacity .45s ease, transform .55s cubic-bezier(.2,1.4,.4,1), box-shadow .2s; text-align:left; }
+.clip-card { --tilt:0deg; margin:0; position:relative; background:#fff; border:3px solid var(--ink); box-shadow:6px 6px 0 var(--sh,var(--ink)); border-radius:3px; padding:14px 14px 0; transform:rotate(var(--tilt)); transition:opacity .45s ease, transform .55s cubic-bezier(.2,1.4,.4,1), box-shadow .2s; text-align:left; }
 .clip-card:nth-child(3n+1) { --tilt:-1.1deg; } .clip-card:nth-child(3n+2) { --tilt:0.9deg; } .clip-card:nth-child(3n) { --tilt:-0.4deg; }
 .clip-card[data-cat="camp"] { --stage-bg:var(--slime); } .clip-card[data-cat="photo"] { --stage-bg:var(--yellow); }
 .clip-card[data-cat="video"] { --stage-bg:var(--cyan); } .clip-card[data-cat="org"] { --stage-bg:var(--pink); }
 .clip-card::before { content:''; position:absolute; top:-15px; right:26px; width:86px; height:26px; background:var(--stage-bg); border:2px solid var(--ink); opacity:0.92; transform:rotate(3deg); }
 .clip-card.reveal { opacity:0; transform:translateY(30px) scale(0.92) rotate(calc(var(--tilt) * 2.5)); }
 .clip-card.reveal.in { opacity:1; transform:rotate(var(--tilt)); }
-.clip-card.in:hover, .clip-card.reveal.in:hover { transform:rotate(0deg) translate(-2px,-3px); box-shadow:9px 9px 0 var(--ink); }
-.clip-label { position:absolute; top:-18px; left:14px; z-index:1; font-family:'Permanent Marker',cursive; font-size:0.8rem; letter-spacing:1px; color:var(--ink); background:#fff; border:2.5px solid var(--ink); box-shadow:2px 2px 0 var(--ink); padding:4px 10px; transform:rotate(-2deg); }
+.clip-card.in:hover, .clip-card.reveal.in:hover { transform:rotate(0deg) translate(-2px,-3px); box-shadow:9px 9px 0 var(--sh,var(--ink)); }
+.clip-label { position:absolute; top:-18px; left:14px; z-index:1; font-family:'Permanent Marker',cursive; font-size:0.8rem; letter-spacing:1px; color:var(--ink); background:#fff; border:2.5px solid var(--ink); box-shadow:2px 2px 0 var(--sh,var(--ink)); padding:4px 10px; transform:rotate(-2deg); }
 .clip-media { position:relative; aspect-ratio:4/5; border:2.5px solid var(--ink); background:linear-gradient(160deg,rgba(255,255,255,0.78),rgba(255,255,255,0.35)),var(--stage-bg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; overflow:hidden; text-align:center; padding:0 14px; }
 .clip-media.loaded { aspect-ratio:auto; height:660px; background:#fff; padding:0; }
 .clip-media iframe { width:100%; height:100%; border:0; display:block; }
 .clip-emoji { font-size:3.4rem; line-height:1; }
-.clip-load { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; color:var(--ink); background:var(--slime); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); padding:12px 24px; min-height:48px; cursor:pointer; transition:all .12s; }
-.clip-load:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink); }
+.clip-load { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; color:var(--ink); background:var(--slime); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--sh,var(--ink)); padding:12px 24px; min-height:48px; cursor:pointer; transition:all .12s; }
+.clip-load:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--sh,var(--ink)); }
 .clip-note { font-family:'Fredoka One',cursive; font-size:0.8rem; }
 .clip-cap { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; padding:6px 2px 8px; font-family:'Permanent Marker',cursive; font-size:0.9rem; letter-spacing:1px; }
 .clip-cap a { color:var(--ink); min-height:44px; display:inline-flex; align-items:center; }
 .clip-more { position:relative; text-align:center; margin-top:38px; }
-.clip-morebtn { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; color:var(--ink); background:var(--yellow); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); padding:12px 28px; min-height:48px; cursor:pointer; transition:all .12s; }
-.clip-morebtn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink); }
+.clip-morebtn { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; color:var(--ink); background:var(--yellow); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--sh,var(--ink)); padding:12px 28px; min-height:48px; cursor:pointer; transition:all .12s; }
+.clip-morebtn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--sh,var(--ink)); }
 .clip-empty { font-family:'Fredoka One',cursive; font-size:0.95rem; line-height:1.6; }
 .organizer .clip-card { max-width:420px; margin:38px auto 28px; }
 
 /* lineup: day jump + linked acts */
 .day { scroll-margin-top:90px; }
-.day-jump { position:relative; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:-10px 0 30px; }
-.day-pill { font-family:'Permanent Marker',cursive; font-size:0.85rem; letter-spacing:1px; text-decoration:none; color:var(--ink); background:#fff; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--ink); padding:8px 16px; min-height:44px; display:inline-flex; align-items:center; transition:all .12s; }
-.day-pill:hover { background:var(--yellow); transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--ink); }
+.day-jump { position:relative; top:auto; z-index:auto; padding:0; background:none; backdrop-filter:none; border-bottom:0; box-shadow:none; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:-10px 0 30px; }
+.day-pill { font-family:'Permanent Marker',cursive; font-size:0.85rem; letter-spacing:1px; text-decoration:none; color:var(--ink); background:#fff; border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--sh,var(--ink)); padding:8px 16px; min-height:44px; display:inline-flex; align-items:center; transition:all .12s; }
+.day-pill:hover { background:var(--yellow); transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--sh,var(--ink)); }
 .act.has-link { padding:0; }
 .act.has-link a { display:inline-flex; align-items:center; justify-content:center; width:100%; min-height:44px; padding:6px 11px; color:inherit; text-decoration:none; }
 .act.has-link a::after { content:' ↗'; font-size:0.7em; margin-left:4px; }
 
 /* closing card */
-.return { background:var(--ink); border-color:var(--slime); box-shadow:6px 6px 0 var(--slime); text-align:center; }
-.return::before { border-color:rgba(255,255,255,0.18); }
-.return .tag { color:var(--slime); } .return h2 { color:#fff; }
+.return { text-align:center; }
 .return p { font-family:'Fredoka One',cursive; font-size:1.08rem; line-height:1.7; color:rgba(255,255,255,0.88); max-width:600px; margin:0 auto 14px; position:relative; }
 .status { display:inline-block; margin:6px 0 20px; padding:8px 18px; background:var(--yellow); color:var(--ink); border:2.5px solid var(--ink); box-shadow:3px 3px 0 var(--pink); font-family:'Permanent Marker',cursive; letter-spacing:2px; transform:rotate(-1.5deg); }
 .btns { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:22px; position:relative; }
-.btn { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; text-decoration:none; color:var(--ink); background:var(--slime); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); padding:12px 26px; min-height:48px; display:inline-flex; align-items:center; transition:all .12s; }
-.btn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink); }
+.btn { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; text-decoration:none; color:var(--ink); background:var(--slime); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--sh,var(--ink)); padding:12px 26px; min-height:48px; display:inline-flex; align-items:center; transition:all .12s; }
+.btn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--sh,var(--ink)); }
 
 footer { position:relative; z-index:2; text-align:center; padding:40px 20px 36px; background:var(--ink); border-top:3px solid var(--slime); }
 .footer-logo { font-family:'Nosifer',cursive; font-size:1.4rem; color:var(--slime); letter-spacing:2px; margin-bottom:10px; }
@@ -241,8 +241,8 @@ footer .gang { margin:0 0 18px; }
 }
 @media (max-width:480px) {
   nav { padding:8px 12px; } .nav-logo { font-size:1rem; gap:6px; } .nav-ig-text { display:none; }
-  .title-card { padding:22px 16px 22px; box-shadow:3px 3px 0 var(--ink); }
-  .card { padding:28px 16px 30px; box-shadow:4px 4px 0 var(--ink); }
+  .title-card { padding:22px 16px 22px; box-shadow:3px 3px 0 var(--slime); }
+  .card { padding:28px 16px 30px; box-shadow:4px 4px 0 var(--slime); }
   .stat { min-width:calc(50% - 8px); }
   .btn { width:100%; justify-content:center; }
   .possum-float { bottom:14px; right:14px; } .possum-float img { width:42px; }
@@ -278,8 +278,8 @@ footer .gang { margin:0 0 18px; }
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner">
-    <span>THANK YOU, SWAMP</span><span>*</span><span>BIGGEST POSSUMSTOCK TO DATE</span><span>*</span><span>RED RIVER CANOE · ADAMS, TN</span><span>*</span><span>WILDEST WEEKEND IN YEARS</span><span>*</span><span>THE SEASON AIN'T OVER</span><span>*</span>
-    <span>THANK YOU, SWAMP</span><span>*</span><span>BIGGEST POSSUMSTOCK TO DATE</span><span>*</span><span>RED RIVER CANOE · ADAMS, TN</span><span>*</span><span>WILDEST WEEKEND IN YEARS</span><span>*</span><span>THE SEASON AIN'T OVER</span><span>*</span>
+    <span>THANK YOU, SWAMP</span><span>*</span><span>BIGGEST POSSUMSTOCK TO DATE</span><span>*</span><span>RED RIVER CANOE · ADAMS, TN</span><span>*</span><span>WILDEST WEEKEND IN YEARS</span><span>*</span><span>POSSUMS DON'T HIBERNATE</span><span>*</span>
+    <span>THANK YOU, SWAMP</span><span>*</span><span>BIGGEST POSSUMSTOCK TO DATE</span><span>*</span><span>RED RIVER CANOE · ADAMS, TN</span><span>*</span><span>WILDEST WEEKEND IN YEARS</span><span>*</span><span>POSSUMS DON'T HIBERNATE</span><span>*</span>
   </div>
 </div>
 <div class="ann-bar" aria-hidden="true">
@@ -311,7 +311,7 @@ footer .gang { margin:0 0 18px; }
   <section id="lineup" aria-labelledby="lineup-h">
     <div class="card">
       <div class="sec-head">
-        <span class="tag" style="color:var(--slime-dark);">* WHO TORE IT UP *</span>
+        <span class="tag" style="color:var(--slime);">* WHO TORE IT UP *</span>
         <h2 id="lineup-h">THE 2026 LINEUP</h2>
         <div class="hand-underline"></div>
       </div>
@@ -332,7 +332,7 @@ footer .gang { margin:0 0 18px; }
   <section id="clips" aria-labelledby="clips-h">
     <div class="card">
       <div class="sec-head">
-        <span class="tag" style="color:var(--slime-dark);">* CAUGHT ON CAMERA *</span>
+        <span class="tag" style="color:var(--slime);">* CAUGHT ON CAMERA *</span>
         <h2 id="clips-h">FROM THE FIELD</h2>
         <div class="hand-underline"></div>
       </div>
@@ -353,7 +353,7 @@ footer .gang { margin:0 0 18px; }
   <section id="crew" aria-labelledby="who-h">
     <div class="card">
       <div class="sec-head">
-        <span class="tag" style="color:var(--pink-dark);">* THE REAL HEADLINERS *</span>
+        <span class="tag" style="color:var(--pink);">* THE REAL HEADLINERS *</span>
         <h2 id="who-h">WHO MADE IT HAPPEN</h2>
         <div class="hand-underline" style="background:var(--pink);"></div>
       </div>
@@ -484,8 +484,8 @@ const CREW = [
   { name:'Moon Rooster' },
   { name:'Revel House Pub & Eatery', link:'https://www.facebook.com/RevelHouseClarksville' },
   { name:'&Vinyl Records' },
-  { name:'Ville Magazine', link:'https://www.facebook.com/profile.php?id=100075474940445' },
-  { name:'Kim Cargill Realty', link:'https://www.instagram.com/kimcargillrealtor/' },
+  { name:'Ville Magazine', link:'villerockandroll' },
+  { name:'Kim Cargill Realty', link:'https://www.realtor.com/realestateagents/56d5299eb5cc660100bbe624' },
   { name:'Food vendors' }
 ];
 
