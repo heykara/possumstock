@@ -20,18 +20,18 @@ The festival is over. `index.html` was replaced with a single-page **thank-you /
 1. Nav (logo link + Instagram button) and a dark marquee. The marquee reads "POSSUMS NEVER DIE" three times, then "NEWS DROPPING SOON".
 2. Hero: logo, a possum playing dead, "THANK YOU, SWAMP", and the festival dates.
 3. Three stages: thank-you blurbs for Sun Daddy, Eclipse Flow Lounge, and Moon Mama.
-4. **FROM THE FIELD**: Instagram clips with stage tabs (Sun, Eclipse, Moon).
+4. **FROM THE FIELD**: shows one random taped photo card from a random category (Possum Camp, Photo Stock, Videos). Category chips switch; SEE MORE reveals the rest. The organizer's post (@el.parson) sits under THANK YOU, SWAMP. Lineup has day-jump pills, and acts become links when added to `LINKS`.
 5. **WHO MADE IT HAPPEN**: credits for sound, production, behind the scenes, other crew, partners, and photos.
 6. Closing card: "POSSUMS NEVER DIE." with a "SOCIAL BATTERY: CHARGING" badge and an Instagram follow button.
 7. Footer with a privacy link.
 
 ## Voice and tone (from the organizer's own post, @el.parson)
-Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "THE SEASON AIN'T OVER", "more news coming at you with the quickness". Claims used: biggest PossumStock to date and the wildest weekend in years. Keep the energy and avoid corporate language. Don't repeat the organizer's text word for word.
+Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "POSSUMS DON'T HIBERNATE" (replaces the retired "THE SEASON AIN'T OVER"), "more news coming at you with the quickness". Claims used: biggest PossumStock to date and the wildest weekend in years. Keep the energy and avoid corporate language. Don't repeat the organizer's text word for word.
 
 ## Decisions already made
 - **PLUR removed** from this page. Do not reintroduce the PLUR block or the "PEACE · LOVE · UNITY · RESPECT" line.
 - **Skydaddy removed** from credits and partners. (It may still appear in the old `main` site.)
-- **No Organizer tab** in the clips section (tried, then removed).
+- The organizer's post is embedded under the heading, not as a clips tab.
 - No date for next year is announced. Do not invent one.
 - The "Back to the event site" button was removed because the page is now the site.
 
@@ -41,18 +41,18 @@ Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "
 - Behind the scenes: @flameseductress, @_karacomputer, @matt.tv
 - Other crew: @william_wilyard, @randallsaez, @yonky_mcyonkerface, @fancy_boy_clothes, @malfunktion365, @aberration7_77, @msdawnmarie, @glitter.d3mons, @flame_therapist
 - Photos: @lane.c.media
-- Partners row (not from the post): Red River Canoe & Campground, Moon Rooster, Revel House Pub & Eatery, &Vinyl Records, Ville Magazine, Kim Cargill Realty, food vendors
+- Partners row (not from the post): Red River Canoe & Campground, Moon Rooster, Revel House Pub & Eatery, &Vinyl Records, Ville Magazine (@villerockandroll), Kim Cargill Realty (realtor.com page), food vendors
 
 ## Instagram clips: how they work
 - Data is the `CLIPS` object at the bottom of `index.html`: `stage: [type, shortcode, creditHandle?]`, where type is `reel` or `p`.
-- Nothing from Instagram loads until a visitor taps **LOAD CLIP**. Then one iframe at `https://www.instagram.com/{type}/{code}/embed/` is created. Only one embed is loaded at a time.
-- Each clip has a "Watch on Instagram" fallback link, since embeds fail offline.
-- Current clips: Sun Daddy 6, Eclipse 2, Moon Mama 2 (10 total).
+- Nothing from Instagram loads until a visitor taps **TAP TO PLAY** (or TAP TO READ) on that card. Then that card's iframe at `https://www.instagram.com/{type}/{code}/embed/` is created. Several cards can be loaded, each only by its own tap.
+- Each card has an "Open ↗" link and a "📸 @handle" credit when a handle is set. Cards pop in on scroll (IntersectionObserver, skipped for reduced motion).
+- Categories in `CLIPS`: camp (1), photo (5), video (5). Posts were sorted by type: `p` posts -> Photo Stock, reels -> Videos. Move an entry between arrays to recategorize.
 - Carousel posts always open on slide 1. The original `img_index` slides can't be preserved.
 - If a post turns out to be private or deleted, remove its entry from `CLIPS`.
 
 ## Open items
-1. **Clip credits:** the third item in each `CLIPS` entry (posting account handle, no `@`) is empty for all 10 clips. The page already renders "📸 @handle" under a clip when the handle exists. The owner still needs to supply the accounts. Some posts may be collabs with two handles, which the current code doesn't support.
+1. **Clip credits:** the third item in each `CLIPS` entry (posting account handle, no `@`) is empty for all but the Possum Camp post. The page already renders "📸 @handle" under a clip when the handle exists. The owner still needs to supply the accounts. Some posts may be collabs with two handles, which the current code doesn't support.
 2. **Test every embed** on the deployed preview. The embeds were not tested (Instagram blocks automated access, so none of the posts were ever opened).
 3. **Open Graph URLs:** the three OG/canonical URLs assume `https://possumstock.netlify.app/`. Update them if a custom domain is used (a PossumStock custom domain became available in Oct 2026).
 4. **README.TXT is stale.** Sections 1, 3, 4, 8, and 9 describe the old site (CFG, FESTIVAL_SCHEDULE, four-place gate-time rule, guide-app links). Rewrite it once the new site's shape is known. Add a note that Instagram embeds load only on tap, which is an exception to "no external requests beyond Google Fonts".
@@ -69,3 +69,18 @@ Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "
 
 ## Retention ideas (not built)
 A concrete save-the-date once there is a date; an optional feedback link; a self-hosted photo/video gallery to replace Instagram embeds (works offline, fewer privacy concerns); and email/SMS signup (needs a privacy update first).
+
+## Aesthetic pass 2 (latest)
+- Hero possum is now `assets/custom/possum-heart-paws.svg` (upright, heart paws, `possumBop` animation). The upside-down "playing dead" possum and its `flop` CSS are gone.
+- The organizer post has no label sticker (`CATS.org.label` is empty); the embedded card stays and is still tap-to-load.
+- THREE STAGES section removed.
+- Lineup is folded behind a **SEE THE LINEUP ▼** button (`#lineupToggle` / `#lineupBody`). The nav LINEUP link, `#lineup` and `#day-*` hashes open it.
+- WHO MADE IT HAPPEN is one wall of band-style name blocks built from the `CREW` array (name + Instagram handle or https link). Joe Tellmann, Consolidated Presents, Kody Luck, kara computer and Matt TV have names; the rest still show handles until real names are supplied. Partners are folded into the same wall.
+- Shared helpers: `styleBlock`, `nameBlock`, `igUrl`.
+
+## Aesthetic pass 3
+- All section cards and the hero title card now use the closing-card look: ink background, slime border and offset shadow, white text. Inner stickers stay white with ink text; their shadows use `var(--sh)` (slime inside cards).
+- Ticker and OG description no longer say "THE SEASON AIN'T OVER" (ticker now says POSSUMS DON'T HIBERNATE).
+- Partner links confirmed: Kim Cargill Realty -> realtor.com agent page; Ville Magazine -> instagram.com/villerockandroll.
+- Lineup stays click-to-expand. No A-Z finder.
+- `.day-jump` is a `<nav>`, so it carries explicit resets so the global `nav` styles don't leak onto it.
