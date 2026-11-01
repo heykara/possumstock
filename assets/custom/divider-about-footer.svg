@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,50 C120,20 240,75 380,48 C520,22 600,68 740,48 C880,28 960,65 1100,48 C1240,30 1350,62 1440,50 L1440,90 L0,90 Z"
+      fill="rgba(26,18,40,0.85)" stroke="none"/>
+    <!-- Slime drips into footer -->
+    <ellipse cx="200" cy="80" rx="14" ry="10" fill="#1a1228"/>
+    <ellipse cx="200" cy="72" rx="9"  ry="8"  fill="#1a1228"/>
+    <ellipse cx="560" cy="84" rx="16" ry="12" fill="#1a1228"/>
+    <ellipse cx="560" cy="74" rx="10" ry="10" fill="#1a1228"/>
+    <ellipse cx="920" cy="80" rx="14" ry="10" fill="#1a1228"/>
+    <ellipse cx="920" cy="72" rx="9"  ry="8"  fill="#1a1228"/>
+    <ellipse cx="1260" cy="84" rx="16" ry="11" fill="#1a1228"/>
+    <ellipse cx="1260" cy="76" rx="10" ry="9"  fill="#1a1228"/>
+    <!-- Slime green accent dots on wave crest -->
+    <circle cx="380"  cy="48" r="5" fill="#8ee820" stroke="#1a1228" stroke-width="1.5"/>
+    <circle cx="740"  cy="48" r="5" fill="#00c8e8" stroke="#1a1228" stroke-width="1.5"/>
+    <circle cx="1100" cy="48" r="5" fill="#f07898" stroke="#1a1228" stroke-width="1.5"/>
+    <circle cx="90"   cy="38" r="4" fill="#f8d800" stroke="#1a1228" stroke-width="1.5"/>
+    <circle cx="1350" cy="42" r="4" fill="#9858c8" stroke="#1a1228" stroke-width="1.5"/>
+  </svg>

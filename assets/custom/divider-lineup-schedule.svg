@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,45 C80,20 160,70 260,45 C360,20 420,68 520,45 C620,22 680,60 800,45 C920,30 980,65 1100,45 C1220,25 1310,60 1440,42 L1440,90 L0,90 Z"
+      fill="rgba(142,232,32,0.18)" stroke="#1a1228" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Lightning bolt -->
+    <g transform="translate(120,20)">
+      <path d="M6,0 L0,16 L6,16 L0,32 L16,12 L10,12 L16,0 Z" fill="#f8d800" stroke="#1a1228" stroke-width="2"/>
+    </g>
+    <!-- Flower pink -->
+    <g transform="translate(400,22)">
+      <ellipse cx="0" cy="-10" rx="5" ry="8" fill="#f07898" stroke="#1a1228" stroke-width="1.8"/>
+      <ellipse cx="10" cy="0"  rx="8" ry="5" fill="#f07898" stroke="#1a1228" stroke-width="1.8"/>
+      <ellipse cx="0" cy="10" rx="5" ry="8"  fill="#f07898" stroke="#1a1228" stroke-width="1.8"/>
+      <ellipse cx="-10" cy="0" rx="8" ry="5" fill="#f07898" stroke="#1a1228" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="5" fill="#f8d800" stroke="#1a1228" stroke-width="1.8"/>
+    </g>
+    <!-- Double music notes -->
+    <g transform="translate(720,18)">
+      <path d="M-8,-14 L-8,6 M4,-18 L4,2" stroke="#1a1228" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-8,-14 L4,-18" stroke="#1a1228" stroke-width="2.5"/>
+      <ellipse cx="-12" cy="8" rx="6" ry="4" fill="#8ee820" stroke="#1a1228" stroke-width="1.8" transform="rotate(-20 -12 8)"/>
+      <ellipse cx="0" cy="4" rx="6" ry="4" fill="#8ee820" stroke="#1a1228" stroke-width="1.8" transform="rotate(-20 0 4)"/>
+    </g>
+    <!-- Star burst -->
+    <g transform="translate(1040,24)">
+      <path d="M0,-12 L2,-4 L10,-4 L4,1 L6,9 L0,4 L-6,9 L-4,1 L-10,-4 L-2,-4 Z" fill="#00c8e8" stroke="#1a1228" stroke-width="1.8"/>
+    </g>
+    <!-- Worm right -->
+    <g transform="translate(1280,32)">
+      <path d="M-32,0 C-22,-12 -10,12 0,0 C10,-12 22,12 32,0" fill="none" stroke="#9858c8" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-32" cy="0" r="5" fill="#9858c8" stroke="#1a1228" stroke-width="1.8"/>
+      <circle cx="-35" cy="-2" r="1.8" fill="#1a1228"/>
+    </g>
+    <!-- Spiral -->
+    <g transform="translate(240,26)">
+      <path d="M0,0 C0,-9 10,-11 10,-4 C10,5 0,7 -2,1" fill="none" stroke="#f07820" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </svg>

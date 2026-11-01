@@ -1,0 +1,17 @@
+<svg width="28" height="28" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <ellipse cx="20" cy="22" rx="14" ry="12" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.2"/>
+      <ellipse cx="8"  cy="14" rx="6" ry="8" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.2"/>
+      <ellipse cx="32" cy="14" rx="6" ry="8" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.2"/>
+      <ellipse cx="8"  cy="13" rx="3.5" ry="5" fill="#f0b8c8"/>
+      <ellipse cx="32" cy="13" rx="3.5" ry="5" fill="#f0b8c8"/>
+      <ellipse cx="20" cy="24" rx="7" ry="5" fill="#e8e0d8" stroke="#1a1228" stroke-width="1.5"/>
+      <circle cx="15" cy="20" r="3.5" fill="#1a1228"/>
+      <circle cx="25" cy="20" r="3.5" fill="#1a1228"/>
+      <circle cx="16" cy="19" r="1.2" fill="#fff"/>
+      <circle cx="26" cy="19" r="1.2" fill="#fff"/>
+      <ellipse cx="20" cy="26" rx="3" ry="2" fill="#f08898"/>
+      <line x1="12" y1="27" x2="4"  y2="25" stroke="#1a1228" stroke-width="1.5"/>
+      <line x1="12" y1="28" x2="3"  y2="28" stroke="#1a1228" stroke-width="1.5"/>
+      <line x1="28" y1="27" x2="36" y2="25" stroke="#1a1228" stroke-width="1.5"/>
+      <line x1="28" y1="28" x2="37" y2="28" stroke="#1a1228" stroke-width="1.5"/>
+    </svg>
