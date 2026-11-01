@@ -89,8 +89,16 @@ h1 { font-family:'Nosifer',cursive; font-size:clamp(1.7rem,6vw,3rem); letter-spa
 .hand-underline { height:6px; max-width:200px; margin:10px auto 18px; background:var(--slime); border:2px solid var(--ink); border-radius:3px; transform:rotate(-1deg); }
 .lede { font-family:'Fredoka One',cursive; font-size:1.12rem; line-height:1.65; max-width:560px; margin:0 auto; }
 .dates { display:inline-block; margin-top:18px; font-family:'Fredoka One',cursive; letter-spacing:2px; background:var(--yellow); padding:4px 16px; border:2px solid var(--ink); box-shadow:3px 3px 0 var(--ink); }
-.possum-dead { display:block; margin:0 auto -6px; animation:flop 4s ease-in-out infinite; }
-@keyframes flop { 0%,100% { transform:rotate(172deg); } 50% { transform:rotate(188deg); } }
+.possum-love { display:block; margin:-4px auto 2px; animation:possumBop 2.4s ease-in-out infinite; }
+
+/* collapsible lineup */
+.lineup-cta { text-align:center; margin:6px 0 10px; }
+.lineup-toggle { font-family:'Lilita One',cursive; font-size:1.25rem; letter-spacing:1px; min-height:56px; padding:10px 26px; background:var(--slime); color:var(--ink); border:3.5px solid var(--ink); box-shadow:5px 5px 0 var(--ink); border-radius:3px; cursor:pointer; transform:rotate(-1deg); transition:transform .15s, box-shadow .15s, background .15s; }
+.lineup-toggle:hover { background:var(--yellow); transform:translate(-2px,-2px) rotate(-1deg); box-shadow:7px 7px 0 var(--ink); }
+.lineup-toggle .arrow { display:inline-block; margin-left:6px; animation:arrowBounce 1.2s ease-in-out infinite; }
+.lineup-toggle[aria-expanded="true"] .arrow { animation:none; }
+@keyframes arrowBounce { 0%,100% { transform:translateY(-2px); } 50% { transform:translateY(5px); } }
+#lineupBody { margin-top:22px; }
 
 /* by the numbers */
 .stats { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; max-width:760px; margin:34px auto 0; }
@@ -217,6 +225,9 @@ footer .gang { margin:0 0 18px; }
 .possum-float:hover { filter:drop-shadow(4px 4px 0 rgba(0,0,0,0.3)); }
 .possum-float img { display:block; width:54px; height:auto; }
 
+/* crew wall */
+.crew-wall { max-width:760px; margin:0 auto; gap:12px; }
+
 @media (max-width:1100px) { .hero-deco { display:none; } }
 @media (max-width:900px) {
   .stages, .days { grid-template-columns:1fr; gap:42px; }
@@ -239,7 +250,6 @@ footer .gang { margin:0 0 18px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }
   *, *::before, *::after { animation:none !important; transition-duration:0.001ms !important; }
-  .possum-dead { transform:rotate(180deg); }
 }
 </style>
 </head>
@@ -284,18 +294,7 @@ footer .gang { margin:0 0 18px; }
   <section class="hero" aria-labelledby="t">
     <img class="hero-logo" src="assets/possumstock-2026-logo.png" alt="PossumStock 2026">
     <div class="title-card">
-      <svg class="possum-dead" width="64" height="59" viewBox="0 0 52 48" fill="none" aria-hidden="true">
-        <ellipse cx="26" cy="30" rx="18" ry="15" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.5"/>
-        <ellipse cx="10" cy="18" rx="8" ry="10" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.5"/>
-        <ellipse cx="42" cy="18" rx="8" ry="10" fill="#c8c0b8" stroke="#1a1228" stroke-width="2.5"/>
-        <ellipse cx="10" cy="17" rx="4.5" ry="6.5" fill="#f0b8c8"/>
-        <ellipse cx="42" cy="17" rx="4.5" ry="6.5" fill="#f0b8c8"/>
-        <ellipse cx="26" cy="32" rx="9" ry="7" fill="#e8e0d8" stroke="#1a1228" stroke-width="2"/>
-        <path d="M16 24 L24 32 M24 24 L16 32 M28 24 L36 32 M36 24 L28 32" stroke="#1a1228" stroke-width="2.5" stroke-linecap="round"/>
-        <ellipse cx="26" cy="36" rx="4" ry="2.5" fill="#f08898"/>
-        <line x1="16" y1="37" x2="5" y2="34" stroke="#1a1228" stroke-width="2"/>
-        <line x1="36" y1="37" x2="47" y2="34" stroke="#1a1228" stroke-width="2"/>
-      </svg>
+      <img class="possum-love" src="assets/custom/possum-heart-paws.svg" width="104" height="104" alt="" aria-hidden="true">
       <h1 id="t">THANK YOU, SWAMP</h1>
       <div class="hand-underline"></div>
       <div class="organizer" id="organizerPost"></div>
@@ -309,30 +308,6 @@ footer .gang { margin:0 0 18px; }
 
   <img class="sec-divider" src="assets/custom/divider-hero-lineup.svg" alt="" aria-hidden="true">
 
-  <section aria-labelledby="stages-h">
-    <div class="card">
-      <div class="sec-head">
-        <span class="tag" style="color:var(--cyan-dark);">* LOUD AND GLOWING *</span>
-        <h2 id="stages-h">THREE STAGES</h2>
-        <div class="hand-underline" style="background:var(--cyan);"></div>
-      </div>
-      <div class="stages">
-        <article class="stage">
-          <span class="stage-name sun">☀️ Sun Daddy</span>
-          <p>The big stage went OFF. Thanks to every band that tore it up into the small hours and every camper who stayed up to hear it.</p>
-        </article>
-        <article class="stage">
-          <span class="stage-name eclipse">⚡ Eclipse Flow Lounge</span>
-          <p>Fire, flow, and workshops all weekend. Thanks to the crew that lit up the night and taught the rest of us a few new tricks.</p>
-        </article>
-        <article class="stage">
-          <span class="stage-name moon">🌙 Moon Mama</span>
-          <p>Opened every day and set the tone. Thanks for the sets nobody saw coming.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section id="lineup" aria-labelledby="lineup-h">
     <div class="card">
       <div class="sec-head">
@@ -341,9 +316,14 @@ footer .gang { margin:0 0 18px; }
         <div class="hand-underline"></div>
       </div>
       <p class="intro">Every act that shook the swamp this year 🫶 Go follow them, go see them, go tell them PossumStock sent you.</p>
-      <nav class="day-jump" id="dayJump" aria-label="Jump to a day"></nav>
-      <div class="days" id="lineupDays"></div>
-      <div class="gang" data-gang="8" aria-hidden="true"></div>
+      <div class="lineup-cta">
+        <button class="lineup-toggle" id="lineupToggle" type="button" aria-expanded="false" aria-controls="lineupBody"><span id="lineupToggleText">SEE THE LINEUP</span> <span class="arrow" aria-hidden="true">▼</span></button>
+      </div>
+      <div id="lineupBody" hidden>
+        <nav class="day-jump" id="dayJump" aria-label="Jump to a day"></nav>
+        <div class="days" id="lineupDays"></div>
+        <div class="gang" data-gang="8" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 
@@ -377,46 +357,9 @@ footer .gang { margin:0 0 18px; }
         <h2 id="who-h">WHO MADE IT HAPPEN</h2>
         <div class="hand-underline" style="background:var(--pink);"></div>
       </div>
-      <p class="chip-note" style="margin:-8px auto 34px;max-width:560px;">Really grateful to an incredible crew for making it happen and to the community for showing up. My heart is beyond full 🥹🫶</p>
-      <div class="stages">
-        <article class="stage">
-          <span class="stage-name sun">🔊 Sound</span>
-          <p>Incredible sound guys holding down the whole weekend.</p>
-          <p style="margin-top:12px;"><a class="chip c2" href="https://www.instagram.com/lawton_vierkant/" target="_blank" rel="noopener">@lawton_vierkant</a> <a class="chip c5" href="https://www.instagram.com/joe_tellmann_isdacoolest/" target="_blank" rel="noopener">@joe_tellmann_isdacoolest</a></p>
-        </article>
-        <article class="stage">
-          <span class="stage-name eclipse">🎛 Production</span>
-          <p>Upped the production and brought out the bottom end and the visuals.</p>
-          <p style="margin-top:12px;"><a class="chip c3" href="https://www.instagram.com/consolidatedpresents/" target="_blank" rel="noopener">@consolidatedpresents</a></p>
-        </article>
-        <article class="stage">
-          <span class="stage-name moon">📣 Behind the scenes</span>
-          <p>All the hustle behind the scenes and the promotions that made things solid.</p>
-          <p style="margin-top:12px;"><a class="chip c4" href="https://www.instagram.com/flameseductress/" target="_blank" rel="noopener">@flameseductress</a> <a class="chip c1" href="https://www.instagram.com/_karacomputer/" target="_blank" rel="noopener">@_karacomputer</a> <a class="chip c5" href="https://www.instagram.com/matt.tv/" target="_blank" rel="noopener">@matt.tv</a></p>
-        </article>
-      </div>
-      <p class="chip-note" style="margin-top:44px;">And all the other magical folks that make this event possible 💚</p>
-      <div class="chips" style="margin-top:16px;">
-        <a class="chip c1" href="https://www.instagram.com/william_wilyard/" target="_blank" rel="noopener">@william_wilyard</a>
-        <a class="chip c2" href="https://www.instagram.com/randallsaez/" target="_blank" rel="noopener">@randallsaez</a>
-        <a class="chip c3" href="https://www.instagram.com/yonky_mcyonkerface/" target="_blank" rel="noopener">@yonky_mcyonkerface</a>
-        <a class="chip c4" href="https://www.instagram.com/fancy_boy_clothes/" target="_blank" rel="noopener">@fancy_boy_clothes</a>
-        <a class="chip c5" href="https://www.instagram.com/malfunktion365/" target="_blank" rel="noopener">@malfunktion365</a>
-        <a class="chip c6" href="https://www.instagram.com/aberration7_77/" target="_blank" rel="noopener">@aberration7_77</a>
-        <a class="chip c1" href="https://www.instagram.com/msdawnmarie/" target="_blank" rel="noopener">@msdawnmarie</a>
-        <a class="chip c2" href="https://www.instagram.com/glitter.d3mons/" target="_blank" rel="noopener">@glitter.d3mons</a>
-        <a class="chip c3" href="https://www.instagram.com/flame_therapist/" target="_blank" rel="noopener">@flame_therapist</a>
-      </div>
-      <p class="chip-note">Plus the artists, the flow and fire crew, the volunteers, and every camper, dancer, and kickball player. Thank you!</p>
-      <div class="chips" style="margin-top:6px;">
-        <span class="chip c3">Red River Canoe &amp; Campground</span>
-        <span class="chip c4">Moon Rooster</span>
-        <a class="chip c6" href="https://www.facebook.com/RevelHouseClarksville" target="_blank" rel="noopener">Revel House Pub &amp; Eatery</a>
-        <span class="chip c1">&amp;Vinyl Records</span>
-        <a class="chip c2" href="https://www.facebook.com/profile.php?id=100075474940445" target="_blank" rel="noopener">Ville Magazine</a>
-        <a class="chip c3" href="https://www.instagram.com/kimcargillrealtor/" target="_blank" rel="noopener">Kim Cargill Realty</a>
-        <span class="chip c4">Food vendors</span>
-      </div>
+      <p class="chip-note" style="margin:-8px auto 28px;max-width:560px;">Really grateful to an incredible crew for making it happen and to the community for showing up. My heart is beyond full 🥹🫶</p>
+      <ul class="acts crew-wall" id="crewWall" aria-label="The crew and partners"></ul>
+      <p class="chip-note" style="margin-top:34px;">Plus the artists, the flow and fire crew, the volunteers, and every camper, dancer, and kickball player. Thank you!</p>
       <p class="chip-note">📸 Photos by <a class="chip c2" href="https://www.instagram.com/lane.c.media/" target="_blank" rel="noopener">@lane.c.media</a></p>
     </div>
   </section>
@@ -481,7 +424,7 @@ const CATS = {
   camp:  { label:'⛺ POSSUM CAMP',  icon:'⛺', what:'Possum Camp' },
   photo: { label:'📸 PHOTO STOCK',  icon:'📸', what:'Photo Stock' },
   video: { label:'🎬 VIDEOS',       icon:'🎬', what:'Videos' },
-  org:   { label:'💌 FROM THE ORGANIZER', icon:'💌', what:'the organizer', button:'▶ TAP TO READ' }
+  org:   { label:'', icon:'💌', what:'the organizer', button:'▶ TAP TO READ' }
 };
 // The organizer's thank-you post, shown under THANK YOU, SWAMP.
 const ORGANIZER = ['p','DcjLL4BxLDQ','el.parson'];
@@ -494,18 +437,62 @@ const LINKS = {};
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
 
+const fonts = ["'Nosifer'", "'Permanent Marker'", "'Fredoka One'", "'Lilita One'", "'Rubik Dirt'", "'Boogaloo'"];
+const colors = [ // [background, text], all 4.5:1 or better
+  ['#fff','var(--ink)'], ['var(--slime)','var(--ink)'], ['var(--yellow)','var(--ink)'], ['var(--pink)','var(--ink)'],
+  ['var(--cyan)','var(--ink)'], ['var(--orange)','var(--ink)'], ['var(--purple)','#fff'],
+  ['var(--ink)','var(--slime)'], ['var(--ink)','var(--cyan)'], ['var(--ink)','var(--yellow)'], ['var(--ink)','var(--pink)']
+];
+const sizes = ['0.82rem','0.88rem','0.94rem','1rem','1.06rem'];
+const tilts = [-3,-2,-1.5,-1,-0.5,0,0.5,1,1.5,2,3];
+const igUrl = v => /^https?:/.test(v) ? v : 'https://www.instagram.com/' + v.replace(/^@/, '') + '/';
+// Random band-block look: font, colors, size, tilt.
+const styleBlock = li => {
+  const [bg, fg] = pick(colors);
+  li.style.cssText = `background:${bg};color:${fg};font-family:${pick(fonts)},cursive;font-size:${pick(sizes)};transform:rotate(${pick(tilts)}deg)`;
+};
+// A name block: tappable (with ↗) when it has a link, plain text when it doesn't.
+const nameBlock = (name, link) => {
+  const li = el('li', 'act');
+  if (link) {
+    const a = el('a', '', name);
+    a.href = igUrl(link); a.target = '_blank'; a.rel = 'noopener';
+    li.classList.add('has-link'); li.append(a);
+  } else { li.textContent = name; }
+  return li;
+};
+
+// Who made it happen — edit here. name = what shows on the block, link = Instagram handle (no @) or full https:// link.
+// Blocks with no link stay plain text. Handle-only names are placeholders until we have real names.
+const CREW = [
+  { name:'Joe Tellmann', link:'joe_tellmann_isdacoolest' },
+  { name:'Consolidated Presents', link:'consolidatedpresents' },
+  { name:'Kody Luck', link:'flameseductress' },
+  { name:'kara computer', link:'_karacomputer' },
+  { name:'Matt TV', link:'matt.tv' },
+  { name:'@lawton_vierkant', link:'lawton_vierkant' },
+  { name:'@william_wilyard', link:'william_wilyard' },
+  { name:'@randallsaez', link:'randallsaez' },
+  { name:'@yonky_mcyonkerface', link:'yonky_mcyonkerface' },
+  { name:'@fancy_boy_clothes', link:'fancy_boy_clothes' },
+  { name:'@malfunktion365', link:'malfunktion365' },
+  { name:'@aberration7_77', link:'aberration7_77' },
+  { name:'@msdawnmarie', link:'msdawnmarie' },
+  { name:'@glitter.d3mons', link:'glitter.d3mons' },
+  { name:'@flame_therapist', link:'flame_therapist' },
+  { name:'Red River Canoe & Campground' },
+  { name:'Moon Rooster' },
+  { name:'Revel House Pub & Eatery', link:'https://www.facebook.com/RevelHouseClarksville' },
+  { name:'&Vinyl Records' },
+  { name:'Ville Magazine', link:'https://www.facebook.com/profile.php?id=100075474940445' },
+  { name:'Kim Cargill Realty', link:'https://www.instagram.com/kimcargillrealtor/' },
+  { name:'Food vendors' }
+];
+
 // ── LINEUP WALL ── hand-pasted band-block look from the event site
 (function () {
   const STAGES = [['sun', '☀️ SUN DADDY'], ['moon', '🌙 MOON MAMA'], ['flow', '⚡ FLOW LOUNGE']];
   const LABEL_CLASS = { sun:'sun', moon:'moon', flow:'eclipse' };
-  const fonts = ["'Nosifer'", "'Permanent Marker'", "'Fredoka One'", "'Lilita One'", "'Rubik Dirt'", "'Boogaloo'"];
-  const colors = [ // [background, text], all 4.5:1 or better
-    ['#fff','var(--ink)'], ['var(--slime)','var(--ink)'], ['var(--yellow)','var(--ink)'], ['var(--pink)','var(--ink)'],
-    ['var(--cyan)','var(--ink)'], ['var(--orange)','var(--ink)'], ['var(--purple)','#fff'],
-    ['var(--ink)','var(--slime)'], ['var(--ink)','var(--cyan)'], ['var(--ink)','var(--yellow)'], ['var(--ink)','var(--pink)']
-  ];
-  const sizes = ['0.82rem','0.88rem','0.94rem','1rem','1.06rem'];
-  const tilts = [-3,-2,-1.5,-1,-0.5,0,0.5,1,1.5,2,3];
   const wrap = document.getElementById('lineupDays');
   const jump = document.getElementById('dayJump');
 
@@ -522,18 +509,8 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
       block.append(el('h4', LABEL_CLASS[key], label));
       const list = el('ul', key === 'flow' ? 'acts flow' : 'acts');
       d[key].forEach(name => {
-        const li = el('li', 'act');
-        const ig = LINKS[name];
-        if (ig) {
-          const a = el('a', '', name);
-          a.href = /^https?:/.test(ig) ? ig : 'https://www.instagram.com/' + ig.replace(/^@/, '') + '/';
-          a.target = '_blank'; a.rel = 'noopener';
-          li.classList.add('has-link'); li.append(a);
-        } else { li.textContent = name; }
-        if (key !== 'flow') {
-          const [bg, fg] = pick(colors);
-          li.style.cssText = `background:${bg};color:${fg};font-family:${pick(fonts)},cursive;font-size:${pick(sizes)};transform:rotate(${pick(tilts)}deg)`;
-        }
+        const li = nameBlock(name, LINKS[name]);
+        if (key !== 'flow') styleBlock(li);
         list.append(li);
       });
       block.append(list);
@@ -544,12 +521,36 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 
   if (Object.keys(LINKS).length) jump.insertAdjacentElement('afterend', el('p', 'chip-note', 'Tap a name to see their page ↗'));
 
+  // Lineup stays folded until tapped. Nav link, #lineup and #day-* links open it.
+  const body = document.getElementById('lineupBody');
+  const toggle = document.getElementById('lineupToggle');
+  const toggleText = document.getElementById('lineupToggleText');
+  const arrow = toggle.querySelector('.arrow');
+  const setOpen = open => {
+    body.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggleText.textContent = open ? 'HIDE THE LINEUP' : 'SEE THE LINEUP';
+    arrow.textContent = open ? '▲' : '▼';
+  };
+  toggle.addEventListener('click', () => setOpen(body.hidden));
+  const openFor = hash => { if (hash === '#lineup' || hash.indexOf('#day-') === 0) setOpen(true); };
+  document.querySelectorAll('a[href^="#lineup"], a[href^="#day-"]').forEach(a =>
+    a.addEventListener('click', () => openFor(a.getAttribute('href'))));
+  window.addEventListener('hashchange', () => { openFor(location.hash); const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); });
+  if (location.hash) { openFor(location.hash); const t = document.querySelector(location.hash); if (t) requestAnimationFrame(() => t.scrollIntoView()); }
+
   // By the numbers — counted from LINEUP so it can't drift.
   const acts = new Set(LINEUP.flatMap(d => [...d.sun, ...d.moon])).size;
   const flow = LINEUP.reduce((n, d) => n + d.flow.length, 0);
   const stats = [[LINEUP.length, 'DAYS'], [3, 'STAGES'], [acts, 'ACTS'], [flow, 'FLOW SESSIONS']];
   const ul = document.getElementById('stats');
   stats.forEach(([n, label]) => { const li = el('li', 'stat'); li.append(el('b', '', String(n)), el('span', '', label)); ul.append(li); });
+})();
+
+// ── CREW WALL ──
+(function () {
+  const ul = document.getElementById('crewWall');
+  CREW.forEach(c => { const li = nameBlock(c.name, c.link); styleBlock(li); ul.append(li); });
 })();
 
 // ── POSSUM GANG ROWS ──
@@ -605,7 +606,7 @@ document.getElementById('possumBtn').addEventListener('click', () => {
     icon.setAttribute('aria-hidden', 'true');
     const btn = el('button', 'clip-load', meta.button || '▶ TAP TO PLAY');
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'Load ' + meta.what + (cat === 'org' ? '' : ' post') + ' from Instagram');
+    btn.setAttribute('aria-label', cat === 'org' ? "Load the organizer's post from Instagram" : 'Load ' + meta.what + ' post from Instagram');
     btn.addEventListener('click', () => {
       const f = el('iframe');
       f.src = url(c) + 'embed/';
@@ -627,7 +628,8 @@ document.getElementById('possumBtn').addEventListener('click', () => {
     open.href = url(c); open.target = '_blank'; open.rel = 'noopener';
     cap.append(who, open);
 
-    card.append(el('span', 'clip-label', meta.label), media, cap);
+    if (meta.label) card.append(el('span', 'clip-label', meta.label));
+    card.append(media, cap);
     if (io) { card.classList.add('reveal'); io.observe(card); } else { card.classList.add('in'); }
     return card;
   }
