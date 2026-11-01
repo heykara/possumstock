@@ -1,2 +1,21 @@
 [build]
   publish = "."
+
+# Repo notes for maintainers: keep them in the repo, but never serve them.
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/HANDOFF-post-festival-site.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.TXT"
+  to = "/404"
+  status = 404
+  force = true
