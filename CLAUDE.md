@@ -19,13 +19,14 @@ Loud, grateful, informal, emoji-friendly (😭🥹🫶😈😘). Signature lines
 
 ## Hard rules
 - **Privacy:** if anything that collects personal data is added (mailing list, SMS, push, analytics, or more third-party embeds), update `privacy.html` and its LAST UPDATED line *before* it ships.
-- **Instagram clips** load only after a visitor taps LOAD CLIP, one iframe at a time. Don't add the Instagram embed script or autoloading.
+- **Instagram posts** (the organizer post under the heading, and FROM THE FIELD) load from Instagram only after a visitor taps that card's own button. Never load on scroll or page load, and don't add the Instagram embed script.
 - **Removed on purpose:** PLUR copy and the Skydaddy credit. Do not reintroduce them.
 - **Credits:** use handles exactly as given. Photos by @lane.c.media. Don't alter the handle list in `index.html` without being asked.
 - Don't edit the separate guide-app project (`possumstock2026.netlify.app`).
 
 ## Open items
-1. Fill in the posting account handle (3rd item) for each of the 10 `CLIPS` entries at the bottom of `index.html`.
+1. Fill in the posting account handle (3rd item) for each `CLIPS` entry in `index.html` (only the Possum Camp post has one).
+   Lineup links: add acts to `LINKS` (act name -> Instagram handle) and they become tappable. Confirm the partner links (Revel House, Kim Cargill Realty, Ville Magazine).
 2. Test every embed on the deploy preview.
 3. Update the three Open Graph and canonical URLs if a custom domain is used.
 4. Rewrite `README.TXT` (it still describes the old pre-event site) and delete the guide-app paragraph in `privacy.html` §6 if the homepage still doesn't link to it.
