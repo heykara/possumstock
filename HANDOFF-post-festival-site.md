@@ -20,7 +20,7 @@ The festival is over. `index.html` was replaced with a single-page **thank-you /
 1. Nav (logo link + Instagram button) and a dark marquee. The marquee reads "POSSUMS NEVER DIE" three times, then "NEWS DROPPING SOON".
 2. Hero: logo, a possum playing dead, "THANK YOU, SWAMP", and the festival dates.
 3. Three stages: thank-you blurbs for Sun Daddy, Eclipse Flow Lounge, and Moon Mama.
-4. **FROM THE FIELD**: shows one random taped photo card from a random category (Possum Camp, Photo Stock, Videos). Category chips switch; SEE MORE reveals the rest. The organizer's post (@el.parson) sits under THANK YOU, SWAMP. Lineup has day-jump pills, and acts become links when added to `LINKS`.
+4. **FROM THE FIELD**: shows one random taped photo card from a random category (Possum Camp, Photo Stock, Videos). Category chips switch; SEE MORE reveals the rest. Lineup has day-jump pills, and acts become links when added to `LINKS`.
 5. **WHO MADE IT HAPPEN**: credits for sound, production, behind the scenes, other crew, partners, and photos.
 6. Closing card: "POSSUMS NEVER DIE." with a "SOCIAL BATTERY: CHARGING" badge and an Instagram follow button.
 7. Footer with a privacy link.
@@ -31,7 +31,7 @@ Loud, grateful, informal, emoji-heavy (😭🥹🫶😈😘). Signature lines: "
 ## Decisions already made
 - **PLUR removed** from this page. Do not reintroduce the PLUR block or the "PEACE · LOVE · UNITY · RESPECT" line.
 - **Skydaddy removed** from credits and partners. (It may still appear in the old `main` site.)
-- The organizer's post is embedded under the heading, not as a clips tab.
+- The organizer's @el.parson post is no longer embedded; its thank-you text stays in the hero.
 - No date for next year is announced. Do not invent one.
 - The "Back to the event site" button was removed because the page is now the site.
 
@@ -84,3 +84,6 @@ A concrete save-the-date once there is a date; an optional feedback link; a self
 - Partner links confirmed: Kim Cargill Realty -> realtor.com agent page; Ville Magazine -> instagram.com/villerockandroll.
 - Lineup stays click-to-expand. No A-Z finder.
 - `.day-jump` is a `<nav>`, so it carries explicit resets so the global `nav` styles don't leak onto it.
+
+## Aesthetic pass 4
+- Removed the @el.parson Instagram embed (code, `org` category, CSS). Hero text stays. Only FROM THE FIELD loads Instagram, and only on tap.
