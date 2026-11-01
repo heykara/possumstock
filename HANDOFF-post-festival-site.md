@@ -72,7 +72,6 @@ A concrete save-the-date once there is a date; an optional feedback link; a self
 
 ## Aesthetic pass 2 (latest)
 - Hero possum is now `assets/custom/possum-heart-paws.svg` (upright, heart paws, `possumBop` animation). The upside-down "playing dead" possum and its `flop` CSS are gone.
-- The organizer post has no label sticker (`CATS.org.label` is empty); the embedded card stays and is still tap-to-load.
 - THREE STAGES section removed.
 - Lineup is folded behind a **SEE THE LINEUP ▼** button (`#lineupToggle` / `#lineupBody`). The nav LINEUP link, `#lineup` and `#day-*` hashes open it.
 - WHO MADE IT HAPPEN is one wall of band-style name blocks built from the `CREW` array (name + Instagram handle or https link). Joe Tellmann, Consolidated Presents, Kody Luck, kara computer and Matt TV have names; the rest still show handles until real names are supplied. Partners are folded into the same wall.
