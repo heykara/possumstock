@@ -12,10 +12,10 @@ Static site for PossumStock (camping music festival, Red River Canoe, Adams TN).
 - Use only the CSS custom properties in `:root`. Do not add new hex values.
 - Fonts come from the Google Fonts `@import` only.
 - Tap targets of at least 44px, `prefers-reduced-motion` respected, text contrast of at least 4.5:1 (use the `-dark` variants on white), keep the skip link and visible focus.
-- Keep the sticker and collage look: thick ink borders, offset shadows, slightly rotated cards.
+- Every section card uses the dark ink + slime-border look (same as the closing card). White sticker items sit on top. Keep the sticker and collage look: thick ink borders, offset shadows, slightly rotated cards.
 
 ## Voice
-Loud, grateful, informal, emoji-friendly (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "THE SEASON AIN'T OVER". No corporate language. Never invent dates or announcements. There is no 2027 date yet.
+Loud, grateful, informal, emoji-friendly (😭🥹🫶😈😘). Signature lines: "POSSUMS NEVER DIE", "POSSUMS DON'T HIBERNATE". Don't use "THE SEASON AIN'T OVER" (retired). No corporate language. Never invent dates or announcements. There is no 2027 date yet.
 
 ## Hard rules
 - **Privacy:** if anything that collects personal data is added (mailing list, SMS, push, analytics, or more third-party embeds), update `privacy.html` and its LAST UPDATED line *before* it ships.
@@ -26,7 +26,7 @@ Loud, grateful, informal, emoji-friendly (😭🥹🫶😈😘). Signature lines
 
 ## Open items
 1. Fill in the posting account handle (3rd item) for each `CLIPS` entry in `index.html` (only the Possum Camp post has one).
-   Lineup links: add acts to `LINKS` (act name -> Instagram handle) and they become tappable. Confirm the partner links (Revel House, Kim Cargill Realty, Ville Magazine).
+   Lineup links: add acts to `LINKS` (act name -> Instagram handle) and they become tappable. Partner links are confirmed (Kim Cargill -> realtor.com page, Ville -> @villerockandroll). Handle-only `CREW` blocks still need real names.
 2. Test every embed on the deploy preview.
 3. Update the three Open Graph and canonical URLs if a custom domain is used.
 4. Rewrite `README.TXT` (it still describes the old pre-event site) and delete the guide-app paragraph in `privacy.html` §6 if the homepage still doesn't link to it.
