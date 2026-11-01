@@ -176,7 +176,7 @@ a.chip { text-decoration:none; cursor:pointer; }
 .clip-card { --tilt:0deg; margin:0; position:relative; background:#fff; border:3px solid var(--ink); box-shadow:6px 6px 0 var(--sh,var(--ink)); border-radius:3px; padding:14px 14px 0; transform:rotate(var(--tilt)); transition:opacity .45s ease, transform .55s cubic-bezier(.2,1.4,.4,1), box-shadow .2s; text-align:left; }
 .clip-card:nth-child(3n+1) { --tilt:-1.1deg; } .clip-card:nth-child(3n+2) { --tilt:0.9deg; } .clip-card:nth-child(3n) { --tilt:-0.4deg; }
 .clip-card[data-cat="camp"] { --stage-bg:var(--slime); } .clip-card[data-cat="photo"] { --stage-bg:var(--yellow); }
-.clip-card[data-cat="video"] { --stage-bg:var(--cyan); } .clip-card[data-cat="org"] { --stage-bg:var(--pink); }
+.clip-card[data-cat="video"] { --stage-bg:var(--cyan); }
 .clip-card::before { content:''; position:absolute; top:-15px; right:26px; width:86px; height:26px; background:var(--stage-bg); border:2px solid var(--ink); opacity:0.92; transform:rotate(3deg); }
 .clip-card.reveal { opacity:0; transform:translateY(30px) scale(0.92) rotate(calc(var(--tilt) * 2.5)); }
 .clip-card.reveal.in { opacity:1; transform:rotate(var(--tilt)); }
@@ -195,7 +195,6 @@ a.chip { text-decoration:none; cursor:pointer; }
 .clip-morebtn { font-family:'Permanent Marker',cursive; font-size:1rem; letter-spacing:1px; color:var(--ink); background:var(--yellow); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--sh,var(--ink)); padding:12px 28px; min-height:48px; cursor:pointer; transition:all .12s; }
 .clip-morebtn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--sh,var(--ink)); }
 .clip-empty { font-family:'Fredoka One',cursive; font-size:0.95rem; line-height:1.6; }
-.organizer .clip-card { max-width:420px; margin:38px auto 28px; }
 
 /* lineup: day jump + linked acts */
 .day { scroll-margin-top:90px; }
@@ -242,6 +241,7 @@ footer .gang { margin:0 0 18px; }
 @media (max-width:480px) {
   nav { padding:8px 12px; } .nav-logo { font-size:1rem; gap:6px; } .nav-ig-text { display:none; }
   .title-card { padding:22px 16px 22px; box-shadow:3px 3px 0 var(--slime); }
+  .dates { font-size:0.82rem; letter-spacing:1px; line-height:1.5; padding:6px 12px; }
   .card { padding:28px 16px 30px; box-shadow:4px 4px 0 var(--slime); }
   .stat { min-width:calc(50% - 8px); }
   .btn { width:100%; justify-content:center; }
@@ -297,7 +297,6 @@ footer .gang { margin:0 0 18px; }
       <img class="possum-love" src="assets/custom/possum-heart-paws.svg" width="104" height="104" alt="" aria-hidden="true">
       <h1 id="t">THANK YOU, SWAMP</h1>
       <div class="hand-underline"></div>
-      <div class="organizer" id="organizerPost"></div>
       <p class="lede">WHAT A DAMN BANGER, Y'ALL 😭 Easily the biggest PossumStock to date and the wildest weekend in years. You showed up, you got loud, and our hearts are beyond full.</p>
       <span class="dates">AUG 20-22 · RED RIVER CANOE · ADAMS, TN</span>
     </div>
@@ -423,11 +422,8 @@ const CLIPS = {
 const CATS = {
   camp:  { label:'⛺ POSSUM CAMP',  icon:'⛺', what:'Possum Camp' },
   photo: { label:'📸 PHOTO STOCK',  icon:'📸', what:'Photo Stock' },
-  video: { label:'🎬 VIDEOS',       icon:'🎬', what:'Videos' },
-  org:   { label:'', icon:'💌', what:'the organizer', button:'▶ TAP TO READ' }
+  video: { label:'🎬 VIDEOS',       icon:'🎬', what:'Videos' }
 };
-// The organizer's thank-you post, shown under THANK YOU, SWAMP.
-const ORGANIZER = ['p','DcjLL4BxLDQ','el.parson'];
 
 // Lineup links — edit here. Key = the act name exactly as written in LINEUP above.
 // Value = their Instagram handle (no @) or a full https:// link. Acts with no entry stay plain text.
@@ -606,7 +602,7 @@ document.getElementById('possumBtn').addEventListener('click', () => {
     icon.setAttribute('aria-hidden', 'true');
     const btn = el('button', 'clip-load', meta.button || '▶ TAP TO PLAY');
     btn.type = 'button';
-    btn.setAttribute('aria-label', cat === 'org' ? "Load the organizer's post from Instagram" : 'Load ' + meta.what + ' post from Instagram');
+    btn.setAttribute('aria-label', 'Load ' + meta.what + ' post from Instagram');
     btn.addEventListener('click', () => {
       const f = el('iframe');
       f.src = url(c) + 'embed/';
@@ -633,10 +629,6 @@ document.getElementById('possumBtn').addEventListener('click', () => {
     if (io) { card.classList.add('reveal'); io.observe(card); } else { card.classList.add('in'); }
     return card;
   }
-
-  // Organizer post under THANK YOU, SWAMP
-  const host = $('organizerPost');
-  if (host) host.append(makeCard(ORGANIZER, 'org'));
 
   // FROM THE FIELD: a random category, one card, SEE MORE for the rest
   const grid = $('clipGrid'), more = $('clipMore'), empty = $('clipEmpty');
